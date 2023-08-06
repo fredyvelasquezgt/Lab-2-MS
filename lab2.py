@@ -28,7 +28,7 @@ for n in n_values:
         sample = np.random.rand(n)
         mean = np.mean(sample)
         centered_means.append(mean - 0.5)
-    plt.subplot(2, 2, n_values.index(n) + 1)
+    plt.subplot(3, 2, n_values.index(n) + 1)  # Ajuste aquí para 3 filas y 2 columnas
     plt.hist(centered_means, bins=30, density=True, label=f'n = {n} Promedios')
     x = np.linspace(-0.5, 0.5, 100)
     plt.plot(x, norm.pdf(x, loc=0, scale=np.sqrt(1/(12*n))), label='Distribución Normal')
