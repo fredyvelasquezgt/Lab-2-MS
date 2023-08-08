@@ -16,26 +16,3 @@ plt.legend()
 plt.title('Ley Débil de los Grandes Números')
 plt.show()
 
-# b) Teorema del Límite Central
-n_values = [20, 40, 60, 80, 100]
-N_values = [50, 100, 1000, 10000]
-
-plt.figure(figsize=(15, 12))
-
-for n in n_values:
-    centered_means = []
-    for _ in range(max(N_values)):
-        sample = np.random.rand(n)
-        mean = np.mean(sample)
-        centered_means.append(mean - 0.5)
-    plt.subplot(3, 2, n_values.index(n) + 1)  # Ajuste aquí para 3 filas y 2 columnas
-    plt.hist(centered_means, bins=30, density=True, label=f'n = {n} Promedios')
-    x = np.linspace(-0.5, 0.5, 100)
-    plt.plot(x, norm.pdf(x, loc=0, scale=np.sqrt(1/(12*n))), label='Distribución Normal')
-    plt.xlabel('Valor')
-    plt.ylabel('Densidad de Probabilidad')
-    plt.legend()
-    plt.title(f'Teorema del Límite Central - n = {n}')
-
-plt.tight_layout()
-plt.show()
