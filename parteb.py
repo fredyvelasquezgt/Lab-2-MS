@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 
-# Función para generar n muestras aleatorias uniformemente distribuidas en el intervalo (0, 1)
+# Función para generar n muestras aleatorias uniformemente distribuidas en el intervalo (0, 1).
 def generar_muestras_uniformes(n):
     return np.random.uniform(0, 1, n)
 
